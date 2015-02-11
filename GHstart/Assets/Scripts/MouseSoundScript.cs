@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewGameScript : MonoBehaviour {
+public class MouseSoundScript : MonoBehaviour {
 
 	public AudioClip testchime; 
 
-	void OnMouseOver(){
+	void OnMouseEnter(){ 
 
 		Debug.Log("works");
 		audio.PlayOneShot(testchime);
