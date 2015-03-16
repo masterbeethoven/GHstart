@@ -8,8 +8,8 @@ public class MouseSoundScript : MonoBehaviour {
 	void OnMouseEnter(){ 
 
 		Debug.Log("works");
-		audio.PlayOneShot(testchime);
-		audio.Play ();
+		GetComponent<AudioSource>().PlayOneShot(testchime);
+		GetComponent<AudioSource>().Play ();
 	}
 
 	// Use this for initialization
