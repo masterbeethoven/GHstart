@@ -10,13 +10,28 @@ public class TabSoundScript : MonoBehaviour {
 
 	public AudioClip voiceClip; 
 
+	public string[] menuOptions = new string [4]; 
+	private int pointer = 0;
+
 	// Use this for initialization
 	void Start () {
-	
+		menuOptions[0]="Gone Home";
+		menuOptions[1]="New Game";
+		menuOptions[2]="Options";
+		menuOptions[3]="Exit";
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log ("check");
+		if(Input.GetKeyDown (KeyCode.Tab)){
+			//Debug.Log ("Tab Down");
+			changeAudio();
+		}
+		if(Input.GetKeyDown (KeyCode.Return)){
+			Debug.Log ("Enter");
+			changeScene();
+		}
 
 		/*if(Input.GetKey(KeyCode.Tab))
 		{
@@ -31,11 +46,21 @@ public class TabSoundScript : MonoBehaviour {
 			print("down arrow key is held down");*/
 	}
 
-	public void changeAudio (int index)
+	void changeAudio()
 	{
-
+		pointer ++;
+		if(pointer > 3){
+			pointer = 0;
 		}
+		GameObject.Find (menuOptions[pointer]).SendMessage ("PlaySound");
+
 	}
+	void changeScene()
+	{
+		Application.LoadLevel(menuOptions[pointer]);
+	}
+
+}
 
 
 
