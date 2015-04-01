@@ -11,7 +11,7 @@ public class TabSoundScript : MonoBehaviour {
 	public AudioClip voiceClip; 
 
 	public string[] menuOptions = new string [4]; 
-	private int pointer = 0;
+	private int pointer = -1;
 
 	// Use this for initialization
 	void Start () {
