@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class TabSoundScript : MonoBehaviour { 
 
-	public AudioClip voiceClip; 
+	//public AudioClip voiceClip; 
 
 	public string[] menuOptions = new string [4]; 
 	private int pointer = -1;
