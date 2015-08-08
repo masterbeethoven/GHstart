@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FPSScript.cs" />
      <Compile Include="Assets\Scripts\MouseSoundScript.cs" />
      <Compile Include="Assets\Scripts\OptionsSound.cs" />
      <Compile Include="Assets\Scripts\ShiftTabSoundScript.cs" />
