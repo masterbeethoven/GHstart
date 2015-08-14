@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FPSScript : MonoBehaviour {
 
-	//public float speed = 1.5f;
+	public float speed = 1.5f;
 		
 
 	// Use this for initialization
@@ -15,13 +15,13 @@ public class FPSScript : MonoBehaviour {
 	void Update () {
 
 	
-		if(Input.GetKey(KeyCode.W))
+		/*if(Input.GetKey(KeyCode.W))
 		{
 			GetComponent<Rigidbody>().AddForce(Vector3.back);
-		}
+		}*/
 		//CharacterController.SimpleMove(Vector3.right*speed IDK WTF
 			//everything's backwards bc the camera position got fucked around the house 
-		/*if(Input.GetKey(KeyCode.A))
+		if(Input.GetKey(KeyCode.A))
 		{
 			transform.position+=Vector3.right*speed *Time.deltaTime;
 	
@@ -40,7 +40,7 @@ public class FPSScript : MonoBehaviour {
 		if(Input.GetKey(KeyCode.S))
 		{
 			transform.position+=Vector3.forward*speed*Time.deltaTime;
-		}*/
+		}
 
 
 
