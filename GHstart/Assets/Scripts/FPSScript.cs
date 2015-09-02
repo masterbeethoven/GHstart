@@ -4,6 +4,7 @@ using System.Collections;
 public class FPSScript : MonoBehaviour {
 
 	public float speed = 1.5f;
+	public Camera cam; 
 		
 
 	// Use this for initialization
@@ -14,13 +15,13 @@ public class FPSScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	
+	//movement 
 		/*if(Input.GetKey(KeyCode.W))
 		{
 			GetComponent<Rigidbody>().AddForce(Vector3.back);
 		}*/
 		//CharacterController.SimpleMove(Vector3.right*speed IDK WTF
-			//everything's backwards bc the camera position got fucked around the house 
+			//everything's backwards 
 		if(Input.GetKey(KeyCode.A))
 		{
 			transform.position+=Vector3.right*speed *Time.deltaTime;
@@ -42,14 +43,17 @@ public class FPSScript : MonoBehaviour {
 			transform.position+=Vector3.forward*speed*Time.deltaTime;
 		}
 
+	//head mouse
+
+
 
 
 	
 	}
 
-	 void OnTriggerEnter(Collider col)
+	/* void OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.tag == "Collider")
 			Debug.Log("There is something in front of the object!");
-	}
+	}*/
 }

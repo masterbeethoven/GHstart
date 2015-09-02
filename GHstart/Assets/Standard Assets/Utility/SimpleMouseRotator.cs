@@ -28,6 +28,9 @@ namespace UnityStandardAssets.Utility
         private Vector3 m_FollowVelocity;
         private Quaternion m_OriginalRotation;
 
+		
+	
+
 
         private void Start()
         {
@@ -69,6 +72,8 @@ namespace UnityStandardAssets.Utility
                     m_TargetAngles.x += 360;
                     m_FollowAngles.x += 360;
                 }
+			
+
 
 #if MOBILE_INPUT
             // on mobile, sometimes we want input mapped directly to tilt value,
