@@ -8,7 +8,7 @@
       <File FileName="Assets/Scripts/RayCastScript.cs" Line="20" Column="30" />
       <File FileName="Assets/Standard Assets/Utility/SimpleMouseRotator.cs" Line="1" Column="1" />
       <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AudioMouseOverScript.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/AudioMouseOverScript.cs" Line="18" Column="22" />
       <File FileName="Assets/Scripts/MouseSoundScript.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>

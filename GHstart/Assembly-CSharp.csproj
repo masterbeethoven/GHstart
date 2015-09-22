@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioMouseOverScript.cs" />
      <Compile Include="Assets\Scripts\FPSScript.cs" />
+     <Compile Include="Assets\Scripts\MouseCenteredScript.cs" />
      <Compile Include="Assets\Scripts\MouseSoundScript.cs" />
      <Compile Include="Assets\Scripts\OptionsSound.cs" />
      <Compile Include="Assets\Scripts\RayCastScript.cs" />
