@@ -29,13 +29,13 @@ public class MouseCenteredScript : MonoBehaviour {
 			if (GUILayout.Button ("Confine cursor"))
 				wantedMode = CursorLockMode.Confined;
 			break;
-		case CursorLockMode.Confined:
+		/*case CursorLockMode.Confined:
 			GUILayout.Label ("Cursor is confined");
 			if (GUILayout.Button ("Lock cursor"))
 				wantedMode = CursorLockMode.Locked;
 			if (GUILayout.Button ("Release cursor"))
 				wantedMode = CursorLockMode.None;
-			break;
+			break;*/
 		case CursorLockMode.Locked:
 			GUILayout.Label ("Cursor is locked");
 			if (GUILayout.Button ("Unlock cursor"))
