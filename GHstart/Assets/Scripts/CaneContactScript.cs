@@ -3,6 +3,10 @@ using System.Collections;
 
 public class CaneContactScript : MonoBehaviour {
 
+	public AudioClip clip;
+	AudioSource sound;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -15,7 +19,12 @@ public class CaneContactScript : MonoBehaviour {
 
 	void OnCollisionEnter(){
 		Debug.Log ("bang");
-		GetComponent<AudioSource>().Play ();
+		GetComponent<AudioSource>().Play(); //VO of object
+	
+
+		sound=GetComponent<AudioSource>();// sfx of collision
+		sound.PlayOneShot(clip);
+
 
 	}
 }
