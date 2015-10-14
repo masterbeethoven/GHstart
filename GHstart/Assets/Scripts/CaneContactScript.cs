@@ -18,7 +18,7 @@ public class CaneContactScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(){
-		Debug.Log ("bang");
+		//Debug.Log ("bang");
 		GetComponent<AudioSource>().Play(); //VO of object
 	
 
