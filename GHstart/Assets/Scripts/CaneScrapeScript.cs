@@ -38,7 +38,7 @@ public class CaneScrapeScript : MonoBehaviour {
 			print("Mouse moved right");
 		}
 
-		transform.position =new Vector3(Mathf.PingPong(Time.time*2,max-min)+min, transform.position.y, transform.position.z);
+		//transform.position =new Vector3(Mathf.PingPong(Time.time*.5f,max-min)+min, transform.position.y, transform.position.z);
 
 	
 	}
