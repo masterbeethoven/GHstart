@@ -6,12 +6,14 @@ public class CaneScrapeScript : MonoBehaviour {
 	//bool isMoving = false;
 	public float min = -5f;
 	public float max = 5f;
-	public AudioClip clip;
+	public AudioClip rightswipe;
+	public AudioClip leftswipe;
 	AudioSource sound;
 
 
 	// Use this for initialization
 	void Start () {
+		//rightswipe = GetComponent<AudioSource>();
 		min=transform.position.x;
 		max=transform.position.x+.5f;
 		//auto move
@@ -21,8 +23,8 @@ public class CaneScrapeScript : MonoBehaviour {
 			sound=GetComponent<AudioSource>();// sfx of collision
 			sound.PlayOneShot(clip);
 		}*/
-		sound=GetComponent<AudioSource>();// sfx of collision
-		sound.PlayOneShot(clip);
+		//sound=GetComponent<AudioSource>();// sfx of collision
+		//sound.PlayOneShot(rightswipe);
 	}
 	
 	// Update is called once per frame

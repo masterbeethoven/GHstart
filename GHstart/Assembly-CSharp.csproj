@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioMouseOverScript.cs" />
+     <Compile Include="Assets\Scripts\AudioTest.cs" />
      <Compile Include="Assets\Scripts\CaneContactScript.cs" />
      <Compile Include="Assets\Scripts\CaneScrapeScript.cs" />
      <Compile Include="Assets\Scripts\FPSScript.cs" />
