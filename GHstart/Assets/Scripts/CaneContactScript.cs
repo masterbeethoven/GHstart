@@ -7,8 +7,10 @@ public class CaneContactScript : MonoBehaviour {
 	AudioSource sound;
 
 
+
 	// Use this for initialization
 	void Start () {
+
 	
 	}
 	
@@ -22,9 +24,14 @@ public class CaneContactScript : MonoBehaviour {
 		GetComponent<AudioSource>().Play(); //VO of object
 	
 
-		sound=GetComponent<AudioSource>();// sfx of collision
-		sound.PlayOneShot(clip);
+		/*sound=GetComponent<AudioSource>();
+		if (!sound.isPlaying){
+			sound.clip = clip;
+			sound.Play();*/
+			sound=GetComponent<AudioSource>();// sfx of collision
+			sound.PlayOneShot(clip);
 
 
+		}
 	}
-}
+

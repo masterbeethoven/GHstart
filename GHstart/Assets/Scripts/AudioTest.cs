@@ -3,7 +3,8 @@ using System.Collections;
 
 public class AudioTest : MonoBehaviour {
 
-	public AudioClip impact;
+	public AudioClip sound1;
+	public AudioClip sound2;
 	AudioSource audio;
 
 	// Use this for initialization
@@ -18,7 +19,14 @@ public class AudioTest : MonoBehaviour {
 	void Update () {
 		if(Input.GetAxis("Mouse X")<0){
 			if (!audio.isPlaying) {
-				audio.clip = impact;
+				audio.clip = sound1;
+				audio.Play();
+			}
+		}
+
+		if(Input.GetAxis("Mouse X")>0){
+			if (!audio.isPlaying){
+				audio.clip = sound2;
 				audio.Play();
 			}
 		}
