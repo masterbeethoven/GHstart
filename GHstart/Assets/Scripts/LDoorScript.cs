@@ -21,41 +21,52 @@ public class LDoorScript : MonoBehaviour {
 	void Update () {
 		if (open == false){
 			if(Input.GetKeyDown(KeyCode.Tab)){
-				Debug.Log("tab");
-				transform.GetComponent<Animation>()["LDoorAnim"].normalizedTime = 0.0f;
-				transform.GetComponent<Animation>()["LDoorAnim"].speed = 1.0f;
-				transform.GetComponent<Animation>().CrossFade("LDoorAnim");
-				//transform.Rotate(Vector3.up *doorValue* Time.deltaTime);
-				GetComponent<Animation>().Play("LDoorAnim");
 
-				open=true;	
-					if (open ==true){
-						//GetComponent<AudioSource>().Play();
-						GetComponent<AudioSource>().PlayOneShot(doorOpen);
-					}
+				Debug.Log("tab");
+				LDoorOpen();
 			}
 		}
-		else{
+
+
+		else {
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
-				//transform.Rotate(-Vector3.up * doorValue* Time.deltaTime);
-				//transform.Rotate(Vector3.down * doorValue* Time.deltaTime);
-				transform.GetComponent<Animation>()["LDoorAnim"].normalizedTime = 1.0f;
-				transform.GetComponent<Animation>()["LDoorAnim"].speed = -1.0f;
-				transform.GetComponent<Animation>().CrossFade("LDoorAnim");
-				//GetComponent<Animation>().Play("CloseLDoorAnim");
-				open=false;
-					if(open==false){
-					//yield WaitForSeconds(1f);
-					GetComponent<AudioSource>().PlayOneShot(doorClose);
-					}
+				LDoorClose();
+
 			}
 		}
-	
+	}
+
+	void LDoorOpen(){
+		transform.GetComponent<Animation>()["LDoorAnim"].normalizedTime = 0.0f;
+		transform.GetComponent<Animation>()["LDoorAnim"].speed = 1.0f;
+		transform.GetComponent<Animation>().CrossFade("LDoorAnim");
+		GetComponent<Animation>().Play("LDoorAnim");
+		open=true;	
+		if (open ==true){
+			//GetComponent<AudioSource>().Play();
+			GetComponent<AudioSource>().PlayOneShot(doorOpen);
+		}
+	}
+
+	void LDoorClose(){
+		//transform.Rotate(-Vector3.up * doorValue* Time.deltaTime);
+		//transform.Rotate(Vector3.down * doorValue* Time.deltaTime);
+		transform.GetComponent<Animation>()["LDoorAnim"].normalizedTime = 1.0f;
+		transform.GetComponent<Animation>()["LDoorAnim"].speed = -1.0f;
+		transform.GetComponent<Animation>().CrossFade("LDoorAnim");
+		//GetComponent<Animation>().Play("CloseLDoorAnim");
+		
+		open=false;
+		if(open==false){
+			GetComponent<AudioSource>().PlayOneShot(doorClose);
+		}
+
+	}
 	
 
 	
-	}
+	//}
 }
 
 

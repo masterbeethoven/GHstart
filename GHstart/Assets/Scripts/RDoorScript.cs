@@ -22,36 +22,45 @@ public class RDoorScript : MonoBehaviour {
 		if (open == false){
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
+				RDoorOpen();
 
-				transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f;
-				transform.GetComponent<Animation>()["RDoorAnim"].speed = -1.0f;
-				transform.GetComponent<Animation>().CrossFade("RDoorAnim");
-				//anim was backwards so i'll just deal with it this way
-				open=true;	
-				if (open ==true){
-					GetComponent<AudioSource>().PlayOneShot(doorOpen);
-				}
 			}
 		}
-		else{
+
+		else {
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
+				RDoorClose();
 
-				transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 0.0f;
-				transform.GetComponent<Animation>()["RDoorAnim"].speed = 1.0f;
-				transform.GetComponent<Animation>().CrossFade("RDoorAnim");
-				GetComponent<Animation>().Play("RDoorAnim");
-				open=false;
-				if(open==false){
-					GetComponent<AudioSource>().PlayOneShot(doorClose);
-				}
 			}
 		}
-		
-		
-		
-		
+
 	}
+
+	void RDoorOpen(){
+		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f;
+		transform.GetComponent<Animation>()["RDoorAnim"].speed = -1.0f;
+		transform.GetComponent<Animation>().CrossFade("RDoorAnim");
+		//anim was backwards so i'll just deal with it this way
+		open=true;	
+		if (open ==true){
+			GetComponent<AudioSource>().PlayOneShot(doorOpen);
+		}
+	}
+
+	void RDoorClose(){
+		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 0.0f;
+		transform.GetComponent<Animation>()["RDoorAnim"].speed = 1.0f;
+		transform.GetComponent<Animation>().CrossFade("RDoorAnim");
+		GetComponent<Animation>().Play("RDoorAnim");
+		open=false;
+		if(open==false){
+			GetComponent<AudioSource>().PlayOneShot(doorClose);
+		}
+	}
+
+
 }
+
 
 
