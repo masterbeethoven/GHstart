@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AudioMouseOverScript.cs" />
      <Compile Include="Assets\Scripts\AudioTest.cs" />
+     <Compile Include="Assets\Scripts\CabinetDoorBehaviorArrayScript.cs" />
      <Compile Include="Assets\Scripts\CaneContactScript.cs" />
      <Compile Include="Assets\Scripts\CaneScrapeScript.cs" />
      <Compile Include="Assets\Scripts\FPSScript.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\RayCastScript.cs" />
      <Compile Include="Assets\Scripts\ShiftTabSoundScript.cs" />
      <Compile Include="Assets\Scripts\TabSoundScript.cs" />
+     <Compile Include="Assets\Scripts\WtfAnim.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

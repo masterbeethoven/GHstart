@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class RDoorScript : MonoBehaviour {
-	bool open;
-	//bool open; open starts out as false. when do first tab, turns true. when true, -Vector3.  
+	bool open; // open starts out as false. when do first tab, turns true. when true, -Vector3.  
 	//public float doorValue = 5000f;
-	
+	LDoorScript Name = new LDoorScript();
 	public AudioClip doorOpen;
 	public AudioClip doorClose;
 
@@ -19,11 +18,16 @@ public class RDoorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (open == false){
+		if (open == false && GameObject.FindWithTag("RDoor")){
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
 				RDoorOpen();
 
+			}
+			if (open==true && GameObject.FindWithTag("RDoor")){
+				
+				Name.LDoorOpen();
+				Debug.Log("hey!");
 			}
 		}
 
@@ -37,7 +41,7 @@ public class RDoorScript : MonoBehaviour {
 
 	}
 
-	void RDoorOpen(){
+	public void RDoorOpen(){
 		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f;
 		transform.GetComponent<Animation>()["RDoorAnim"].speed = -1.0f;
 		transform.GetComponent<Animation>().CrossFade("RDoorAnim");
@@ -48,7 +52,7 @@ public class RDoorScript : MonoBehaviour {
 		}
 	}
 
-	void RDoorClose(){
+	public void RDoorClose(){
 		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 0.0f;
 		transform.GetComponent<Animation>()["RDoorAnim"].speed = 1.0f;
 		transform.GetComponent<Animation>().CrossFade("RDoorAnim");
