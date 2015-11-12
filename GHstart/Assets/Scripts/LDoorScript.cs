@@ -6,7 +6,7 @@ public class LDoorScript : MonoBehaviour {
 	bool rDoor; // right door starts out false. 
 	//bool open; open starts out as false. when do first tab, turns true. when true, -Vector3.  
 	//public float doorValue = 5000f;
-	RDoorScript Name = new RDoorScript();
+
 
 	public AudioClip doorOpen;
 	public AudioClip doorClose;
@@ -22,7 +22,7 @@ public class LDoorScript : MonoBehaviour {
 		if (open == false && GameObject.FindWithTag("LDoor")){
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
-				//LDoorOpen();
+				LDoorOpen();
 			}
 //			if (open==true && GameObject.FindWithTag("LDoor")){
 //
@@ -31,9 +31,6 @@ public class LDoorScript : MonoBehaviour {
 //			}
 
 		}
-
-
-
 
 
 		else {

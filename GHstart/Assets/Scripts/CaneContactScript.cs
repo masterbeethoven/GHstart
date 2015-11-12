@@ -26,6 +26,8 @@ public class CaneContactScript : MonoBehaviour {
 
 	void OnCollisionEnter(){
 
+		Debug.Log ("cane touch");
+
 		float currentTime = Time.time;
 		if ((currentTime - timeOfLastPlay) > delay) {
 			//Debug.Log ("bang");

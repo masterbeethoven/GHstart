@@ -4,25 +4,33 @@ using System.Collections.Generic;
 
 public class CabinetDoorBehaviorArrayScript : MonoBehaviour {
 
-
-	public Animation[] doorOptions = new Animation[4]; 
-	private int pointer = -1;
-	//LDoorScript Name = new LDoorScript();
+	//old
+//	public Animation[] doorOptions = new Animation[4]; 
+//	private int pointer = -1;
+	//old
+	public Animation LDoorAnim;
+	public Animation RDoorAnim;
+	bool isOpen = false;
+	public AudioClip doorOpen;
+	public AudioClip doorClose;
 
 
 	// Use this for initialization
 	void Start () {
-		LDoorScript lOpen = gameObject.GetComponent<LDoorScript>();
-		lOpen.LDoorOpen();
 
-		LDoorScript lClose = gameObject.GetComponent<LDoorScript>();
-		lClose.LDoorClose();
-
-		RDoorScript rOpen = gameObject.GetComponent<RDoorScript>();
-		rOpen.RDoorOpen();
-
-		RDoorScript rClose = gameObject.GetComponent<RDoorScript>();
-		rClose.RDoorClose();
+		//old 
+//		LDoorScript lOpen = gameObject.GetComponent<LDoorScript>();
+//		lOpen.LDoorOpen();
+//
+//		LDoorScript lClose = gameObject.GetComponent<LDoorScript>();
+//		lClose.LDoorClose();
+//
+//		RDoorScript rOpen = gameObject.GetComponent<RDoorScript>();
+//		rOpen.RDoorOpen();
+//
+//		RDoorScript rClose = gameObject.GetComponent<RDoorScript>();
+//		rClose.RDoorClose();
+		//old
 
 	
 //		doorOptions[0]= LDoorAnim;//"Left Door Open"
@@ -35,26 +43,35 @@ public class CabinetDoorBehaviorArrayScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Tab)){
-			ChangeDoorState();
-		}
+
+
+
 
 
 
 	}
 
 	public void ChangeDoorState(){
+		//ldoor 
+		transform.GetComponent<Animation>()["LDoorAnim"].normalizedTime = 0.0f;
+		transform.GetComponent<Animation>()["LDoorAnim"].speed = 1.0f;
+		transform.GetComponent<Animation>().CrossFade("LDoorAnim");
+		GetComponent<Animation>().Play("LDoorAnim");
+		Debug.Log ("left");
 
-		pointer ++;
-		if(pointer > 3){
-			pointer = 0;
+		//rdoor
+		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f; 
+		transform.GetComponent<Animation>()["RDoorAnim"].speed = -1.0f; 
+		transform.GetComponent<Animation>().CrossFade("RDoorAnim");
+		//anim was backwards so i'll just deal with it this way
+		GetComponent<Animation>().Play("RDoorAnim");
+		Debug.Log ("right");
+
+		isOpen=true;	
+		if (isOpen ==true){
+			//GetComponent<AudioSource>().Play();
+			GetComponent<AudioSource>().PlayOneShot(doorOpen);
 		}
-		//each array corresponds to the open/close functions from LDoorScript and RDoorScript 
-		//GameObject.Find (doorOptions[pointer]).SendMessage ("LDoorOpen");
-
-
-
-
 
 	}
 }
