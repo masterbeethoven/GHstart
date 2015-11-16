@@ -14,6 +14,7 @@ public class CabinetDoorBehaviorArrayScript : MonoBehaviour {
 	public AudioClip doorOpen;
 	public AudioClip doorClose;
 
+	bool isLeft = true;
 
 	// Use this for initialization
 	void Start () {
@@ -53,24 +54,35 @@ public class CabinetDoorBehaviorArrayScript : MonoBehaviour {
 
 	public void ChangeDoorState(){
 		//ldoor 
-		transform.GetComponent<Animation>()["LDoorAnim"].normalizedTime = 0.0f;
-		transform.GetComponent<Animation>()["LDoorAnim"].speed = 1.0f;
-		transform.GetComponent<Animation>().CrossFade("LDoorAnim");
-		GetComponent<Animation>().Play("LDoorAnim");
-		Debug.Log ("left");
 
-		//rdoor
-		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f; 
-		transform.GetComponent<Animation>()["RDoorAnim"].speed = -1.0f; 
-		transform.GetComponent<Animation>().CrossFade("RDoorAnim");
-		//anim was backwards so i'll just deal with it this way
-		GetComponent<Animation>().Play("RDoorAnim");
-		Debug.Log ("right");
+		if(isLeft){ //LEFT
+			isLeft = false;
+			AnimationState lDoor = transform.GetComponent<Animation>()["LDoorAnim"];
 
-		isOpen=true;	
-		if (isOpen ==true){
-			//GetComponent<AudioSource>().Play();
-			GetComponent<AudioSource>().PlayOneShot(doorOpen);
+			if(lDoor != null){
+				lDoor.normalizedTime = 0.0f;
+				lDoor.speed = 1.0f;
+				transform.GetComponent<Animation>().CrossFade("LDoorAnim");
+				GetComponent<Animation>().Play("LDoorAnim");
+				Debug.Log ("left");
+			}
+		} else { //RIGHT
+			isLeft = true;
+			AnimationState rDoor = transform.GetComponent<Animation>()["RDoorAnim"];
+
+			if(rDoor !=null){
+				rDoor.normalizedTime = 1.0f; 
+				rDoor.speed = -1.0f; 
+				transform.GetComponent<Animation>().CrossFade("RDoorAnim");
+				//anim was backwards so i'll just deal with it this way
+				GetComponent<Animation>().Play("RDoorAnim");
+				Debug.Log ("right");
+			}
+			isOpen=true;	
+			if (isOpen ==true){
+				//GetComponent<AudioSource>().Play();
+				GetComponent<AudioSource>().PlayOneShot(doorOpen);
+			}
 		}
 
 	}

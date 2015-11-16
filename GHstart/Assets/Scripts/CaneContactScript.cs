@@ -24,7 +24,8 @@ public class CaneContactScript : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter(){
+	//void OnCollisionEnter(){
+		void OnCollisionStay(){
 
 		Debug.Log ("cane touch");
 
@@ -35,12 +36,13 @@ public class CaneContactScript : MonoBehaviour {
 			sound.PlayOneShot(clip);
 			timeOfLastPlay = currentTime;
 		}
-
 	}
 
-//	void OnCollisionExit(){
-//		sound.Stop();
-//	}
+	//}
+
+	void OnCollisionExit(){
+		sound.Stop();
+	}
 
 }
 

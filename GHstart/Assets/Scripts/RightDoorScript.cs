@@ -31,8 +31,15 @@ public class RightDoorScript : MonoBehaviour {
 				
 			}
 		}
+
+
 	}
-	
+
+	void OnCollisionStay(){
+
+
+	}
+
 	
 	public void RDoorOpen(){
 		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f;

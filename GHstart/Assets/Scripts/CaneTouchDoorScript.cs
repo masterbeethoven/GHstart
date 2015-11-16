@@ -5,6 +5,7 @@ public class CaneTouchDoorScript : MonoBehaviour {
 
 	public CabinetDoorBehaviorArrayScript lcabinetdoorscript;
 	public CabinetDoorBehaviorArrayScript rcabinetdoorscript;
+	public DuckScript duckscript;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +27,11 @@ public class CaneTouchDoorScript : MonoBehaviour {
 			rcabinetdoorscript.ChangeDoorState();
 		}
 
+		if(Input.GetKeyDown(KeyCode.Return)){
+			Debug.Log ("Duck");
+			duckscript.CollectDuck();
 
-
+		}
 	}
 }
 

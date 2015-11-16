@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CaneContactScript.cs" />
      <Compile Include="Assets\Scripts\CaneScrapeScript.cs" />
      <Compile Include="Assets\Scripts\CaneTouchDoorScript.cs" />
+     <Compile Include="Assets\Scripts\DuckScript.cs" />
      <Compile Include="Assets\Scripts\FPSScript.cs" />
      <Compile Include="Assets\Scripts\FlickeringLightScript.cs" />
      <Compile Include="Assets\Scripts\LDoorScript.cs" />
