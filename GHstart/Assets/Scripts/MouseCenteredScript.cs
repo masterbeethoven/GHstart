@@ -18,30 +18,21 @@ public class MouseCenteredScript : MonoBehaviour {
 		GUILayout.BeginVertical ();
 		// Release cursor on escape keypress
 		if (Input.GetKeyDown (KeyCode.Escape))
-			Cursor.lockState = lockMode = CursorLockMode.None;
+			Cursor.lockState = lockMode = CursorLockMode.None; //used to be /None
 		
 		switch (Cursor.lockState)
 		{
-		case CursorLockMode.None:
-			GUILayout.Label ("Cursor is normal");
-			if (GUILayout.Button ("Lock cursor"))
-				lockMode = CursorLockMode.Locked;
-			if (GUILayout.Button ("Confine cursor"))
-				lockMode = CursorLockMode.Confined;
-			break;
-		/*case CursorLockMode.Confined:
-			GUILayout.Label ("Cursor is confined");
-			if (GUILayout.Button ("Lock cursor"))
-				wantedMode = CursorLockMode.Locked;
-			if (GUILayout.Button ("Release cursor"))
-				wantedMode = CursorLockMode.None;
-			break;*/
+
 		case CursorLockMode.Locked:
 			GUILayout.Label ("Cursor is locked");
 			if (GUILayout.Button ("Unlock cursor"))
 				lockMode = CursorLockMode.None;
-			if (GUILayout.Button ("Confine cursor"))
-				lockMode = CursorLockMode.Confined;
+			break;
+
+		case CursorLockMode.None:
+			GUILayout.Label ("Cursor is normal");
+			if (GUILayout.Button ("Lock cursor"))
+				lockMode = CursorLockMode.Locked;
 			break;
 		}
 		
@@ -54,6 +45,7 @@ public class MouseCenteredScript : MonoBehaviour {
 	void Start () {
 	
 		//Cursor.lockState = CursorLockMode.Locked;
+		lockMode = CursorLockMode.Locked;
 
 	}
 	

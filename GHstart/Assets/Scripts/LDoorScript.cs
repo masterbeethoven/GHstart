@@ -19,16 +19,15 @@ public class LDoorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+	}
+
+	void OnCollisionStay(){
 		if (open == false){
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
 				LDoorOpen();
 			}
-			//			if (open==true && GameObject.FindWithTag("LDoor")){
-			//
-			//				Name.RDoorOpen();
-			//				Debug.Log("hey!");
-			//			}
 			
 		}
 		
@@ -41,9 +40,6 @@ public class LDoorScript : MonoBehaviour {
 			}
 		}
 
-	}
-
-	void OnCollisionStay(){
 
 	}
 

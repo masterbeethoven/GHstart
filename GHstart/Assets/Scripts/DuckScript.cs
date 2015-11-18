@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class DuckScript : MonoBehaviour {
-
-	public GameObject duck;
+	
+	bool gotDuck;
 
 	// Use this for initialization
 	void Start () {
@@ -12,14 +12,22 @@ public class DuckScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		gotDuck=false;
 		CollectDuck();
 	
 	}
 
 	public void CollectDuck(){
-		//Destroy(GameObject.FindWithTag("Duck"));
-		//DestroyObject(duck);
-		//DestroyImmediate(duck,true);
+		if(Input.GetKeyDown(KeyCode.Return)){
+			Destroy(GameObject.FindWithTag("Duck"));
+			Debug.Log("Got the Duck");
+			gotDuck=true;
+			Debug.Log("duck true");
+			//duckscript.CollectDuck();
+			
+		}
+
+
 	}
 
 

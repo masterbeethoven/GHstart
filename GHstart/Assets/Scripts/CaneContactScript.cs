@@ -14,7 +14,7 @@ public class CaneContactScript : MonoBehaviour {
 	void Start () {
 
 		sound = GetComponent<AudioSource>();
-		timeOfLastPlay = -1 * delay;
+		//timeOfLastPlay = -1 * delay;
 
 	}
 	
@@ -24,18 +24,18 @@ public class CaneContactScript : MonoBehaviour {
 	
 	}
 
-	//void OnCollisionEnter(){
-		void OnCollisionStay(){
+	void OnCollisionEnter(){
+		//void OnCollisionStay(){
 
 		Debug.Log ("cane touch");
 
-		float currentTime = Time.time;
-		if ((currentTime - timeOfLastPlay) > delay) {
-			//Debug.Log ("bang");
+//		float currentTime = Time.time;
+//		if ((currentTime - timeOfLastPlay) > delay) {
+//			//Debug.Log ("bang");
 			sound.Play();
 			sound.PlayOneShot(clip);
-			timeOfLastPlay = currentTime;
-		}
+//			timeOfLastPlay = currentTime;
+//		}
 	}
 
 	//}
@@ -45,6 +45,7 @@ public class CaneContactScript : MonoBehaviour {
 	}
 
 }
+
 
 
 

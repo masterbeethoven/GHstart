@@ -27,11 +27,11 @@ public class CaneTouchDoorScript : MonoBehaviour {
 			rcabinetdoorscript.ChangeDoorState();
 		}
 
-		if(Input.GetKeyDown(KeyCode.Return)){
-			Debug.Log ("Duck");
+//		if(Input.GetKeyDown(KeyCode.Return)){
+//			Debug.Log ("Enter for Duck");
 			duckscript.CollectDuck();
-
-		}
+//
+//		}
 	}
 }
 

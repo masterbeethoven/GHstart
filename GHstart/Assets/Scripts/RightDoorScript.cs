@@ -16,6 +16,12 @@ public class RightDoorScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
+	}
+
+	void OnCollisionStay(){
 		if (open == false){
 			if(Input.GetKeyDown(KeyCode.Tab)){
 				Debug.Log("tab");
@@ -35,11 +41,6 @@ public class RightDoorScript : MonoBehaviour {
 
 	}
 
-	void OnCollisionStay(){
-
-
-	}
-
 	
 	public void RDoorOpen(){
 		transform.GetComponent<Animation>()["RDoorAnim"].normalizedTime = 1.0f;
@@ -50,6 +51,7 @@ public class RightDoorScript : MonoBehaviour {
 		if (open ==true){
 			GetComponent<AudioSource>().PlayOneShot(doorOpen);
 		}
+		Debug.Log ("Right Door Open");
 	}
 	
 	public void RDoorClose(){
@@ -61,6 +63,7 @@ public class RightDoorScript : MonoBehaviour {
 		if(open==false){
 			GetComponent<AudioSource>().PlayOneShot(doorClose);
 		}
+		Debug.Log("Right Door Close");
 	}
 	
 	
