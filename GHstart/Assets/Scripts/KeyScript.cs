@@ -18,7 +18,7 @@ public class KeyScript : MonoBehaviour {
 	}
 	
 	public void CollectKey(){
-		if(Input.GetKeyDown(KeyCode.LeftShift)){
+		if(Input.GetKeyDown(KeyCode.LeftShift)|| Input.GetKeyDown(KeyCode.RightShift)){
 			Destroy(GameObject.FindWithTag("Key"));
 			Debug.Log("Got the Key");
 			gotKey=true;
