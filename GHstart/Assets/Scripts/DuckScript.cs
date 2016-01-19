@@ -5,6 +5,7 @@ public class DuckScript : MonoBehaviour {
 	
 	bool gotDuck;
 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -23,10 +24,10 @@ public class DuckScript : MonoBehaviour {
 			Debug.Log("Got the Duck");
 			gotDuck=true;
 			Debug.Log("duck true");
+
 			//duckscript.CollectDuck();
 			
 		}
-
 
 	}
 

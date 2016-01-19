@@ -6,6 +6,7 @@ public class CaneContactScript : MonoBehaviour {
 	private const float delay = 2; // Delay between playing sound
 	
 	public AudioClip clip;
+	public AudioClip clip2;
 	AudioSource sound;
 	private float timeOfLastPlay;
 
@@ -14,13 +15,12 @@ public class CaneContactScript : MonoBehaviour {
 	void Start () {
 
 		sound = GetComponent<AudioSource>();
-		//timeOfLastPlay = -1 * delay;
+		timeOfLastPlay = -1 * delay;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
 	
 	}
 
@@ -29,13 +29,14 @@ public class CaneContactScript : MonoBehaviour {
 
 		Debug.Log ("cane touch");
 
-//		float currentTime = Time.time;
-//		if ((currentTime - timeOfLastPlay) > delay) {
+		float currentTime = Time.time;
+		if ((currentTime - timeOfLastPlay) > delay) {
 //			//Debug.Log ("bang");
 			sound.Play();
 			sound.PlayOneShot(clip);
-//			timeOfLastPlay = currentTime;
-//		}
+			sound.PlayOneShot(clip2);
+			timeOfLastPlay = currentTime;
+		}
 	}
 
 	//}
